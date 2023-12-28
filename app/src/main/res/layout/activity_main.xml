@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/caoutionTextView"
+        android:id="@+id/warningTextView"
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,13 +94,13 @@
         />
 
     <TextView
-        android:id="@+id/caoutionValueTextView"
+        android:id="@+id/warningValueTextView"
         style="@style/Value"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="2"
         android:text="주의사항이 있습니다. 환자분에 대합 겁니다. 숙지 바랍니다."
-        app:layout_constraintBaseline_toBaselineOf="@+id/caoutionTextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/warningTextView"
         app:layout_constraintEnd_toEndOf="@+id/emergencyContactValueTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
