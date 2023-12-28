@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.chapter4.databinding.ActivityMainBinding
 
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding.goInputActivityButton.setOnClickListener {
             val intent = Intent(this,EditActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.deleteButton.setOnClickListener {
+            deleteData()
         }
     }
 
@@ -41,5 +46,15 @@ class MainActivity : AppCompatActivity() {
                 binding.warningValueTextView.text = warning
             }
         }
+    }
+
+    private fun deleteData() {
+        with(getSharedPreferences(USER_INFORMATION, MODE_PRIVATE).edit()) {
+            clear()
+            apply()
+        }
+        getDataAndUiUpdate()
+
+        Toast.makeText(this, "초기화를 완료하였습니다.", Toast.LENGTH_SHORT).show()
     }
 }
